@@ -6,7 +6,7 @@
 /*   By: molasz-a <molasz-a@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 01:26:46 by molasz-a          #+#    #+#             */
-/*   Updated: 2023/11/21 01:33:29 by molasz-a         ###   ########.fr       */
+/*   Updated: 2023/11/21 17:16:02 by molasz-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*elem;
 
-	elem = (t_list *)malloc(sizeof (t_list));
+	elem = ft_calloc(sizeof (t_list), 1);
 	if (!elem)
 		return (NULL);
 	elem->content = content;

@@ -6,13 +6,13 @@
 /*   By: molasz-a <molasz-a@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 01:56:27 by molasz-a          #+#    #+#             */
-/*   Updated: 2023/11/21 01:59:57 by molasz-a         ###   ########.fr       */
+/*   Updated: 2023/11/21 17:37:53 by molasz-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void del(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	del(lst->content);
 	free(lst);
