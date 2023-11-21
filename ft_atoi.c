@@ -6,13 +6,13 @@
 /*   By: molasz-a <molasz-a@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 22:11:08 by molasz-a          #+#    #+#             */
-/*   Updated: 2023/11/19 23:34:32 by molasz-a         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:05:55 by molasz-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	sum_nums(int *nums, int size)
+static int	sum_nums(int *nums, int size)
 {
 	int	mult;
 	int	res;
