@@ -22,8 +22,6 @@ AR		= ar rc
 
 RM		= rm -f
 
-LIB		= ranlib
-
 CC		= cc
 
 CFLAGS	= -Wall -Wextra -Werror
@@ -33,12 +31,11 @@ CFLAGS	= -Wall -Wextra -Werror
 
 ${NAME}:	${OBJS}
 			${AR} ${NAME} ${OBJS}
-			${LIB} ${NAME}
 
 all: 		${NAME}
 
 clean:
-			${RM} ${OBJS}
+			${RM} ${OBJS} ${BOBJS}
 
 fclean:		clean
 			${RM} ${NAME}
@@ -47,6 +44,5 @@ re:			fclean all
 
 bonus:		${OBJS} ${BOBJS}
 			${AR} ${NAME} ${OBJS} ${BOBJS}
-			${LIB} ${NAME}
 
 .PHONY:		clean fclean re all bonus
