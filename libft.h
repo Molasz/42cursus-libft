@@ -6,7 +6,7 @@
 /*   By: molasz-a <molasz-a@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 02:16:09 by molasz-a          #+#    #+#             */
-/*   Updated: 2023/11/21 17:36:57 by molasz-a         ###   ########.fr       */
+/*   Updated: 2024/01/10 00:40:25 by molasz-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h> 
 # include <stdlib.h>
-# include <stdio.h>
 
 typedef struct s_list
 {
