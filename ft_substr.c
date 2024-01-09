@@ -6,7 +6,7 @@
 /*   By: molasz-a <molasz-a@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:41:41 by molasz-a          #+#    #+#             */
-/*   Updated: 2023/11/20 15:57:18 by molasz-a         ###   ########.fr       */
+/*   Updated: 2024/01/09 15:56:08 by molasz-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 		len = 0;
 	else if (ft_strlen(str + start) < len)
 		len = ft_strlen(str + start);
-	substr = ft_calloc(1, len + 1);
+	substr = ft_calloc(sizeof (char), len + 1);
 	if (!substr)
 		return (NULL);
 	if (len)

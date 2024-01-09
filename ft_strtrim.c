@@ -6,7 +6,7 @@
 /*   By: molasz-a <molasz-a@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 16:10:09 by molasz-a          #+#    #+#             */
-/*   Updated: 2023/11/20 17:19:10 by molasz-a         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:41:43 by molasz-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,46 +26,23 @@ static int	c_in_set(char c, char const *set)
 	return (0);
 }
 
-static int	final_size(char const *str, char const *set)
+char	*ft_strtrim(char const *s, char const *set)
 {
-	size_t	i;
-	size_t	count;
-
-	i = 0;
-	count = 0;
-	while (str[i] && c_in_set(str[i], set))
-		i++;
-	count = i;
-	i = ft_strlen(str) - 1;
-	if (count - 1 == i)
-		return (0);
-	while (c_in_set(str[i], set))
-	{
-		count++;
-		i--;
-	}
-	return (ft_strlen(str) - count);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	size_t	i;
-	size_t	j;
-	size_t	strlen;
+	size_t	start;
+	size_t	end;
 	char	*str;
+	int		i;
 
-	i = 0;
-	j = 0;
-	strlen = final_size(s1, set);
-	str = ft_calloc(sizeof (char), strlen + 1);
+	start = 0;
+	end = ft_strlen(s);
+	while (s[start] && c_in_set(s[start], set))
+		start++;
+	while (end > start && c_in_set(s[end - 1], set))
+		end--;
+	str = ft_calloc(sizeof (char), end - start + 1);
 	if (!str)
 		return (NULL);
-	while (s1[i] && c_in_set(s1[i], set))
-		i++;
-	while (j < strlen)
-	{
-		str[j] = s1[i + j];
-		j++;
-	}
+	i = 0;
+	ft_strlcpy(str, &s[start], end - start + 1);
 	return (str);
 }

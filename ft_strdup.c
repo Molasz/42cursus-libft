@@ -6,7 +6,7 @@
 /*   By: molasz-a <molasz-a@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 23:35:48 by molasz-a          #+#    #+#             */
-/*   Updated: 2023/11/19 23:41:25 by molasz-a         ###   ########.fr       */
+/*   Updated: 2024/01/09 15:57:38 by molasz-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *src)
 	char	*str;
 
 	src_len = ft_strlen(src);
-	str = (char *)malloc((src_len + 1) * sizeof (char));
+	str = ft_calloc(sizeof (char), src_len + 1);
 	if (!str)
 		return (NULL);
 	ft_strlcpy(str, src, src_len + 1);

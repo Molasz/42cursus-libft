@@ -6,7 +6,7 @@
 /*   By: molasz-a <molasz-a@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:56:29 by molasz-a          #+#    #+#             */
-/*   Updated: 2023/11/20 16:03:38 by molasz-a         ###   ########.fr       */
+/*   Updated: 2024/01/09 15:55:31 by molasz-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	j;
 	char	*str;
 
-	str = ft_calloc(1, ft_strlen(s1) + ft_strlen(s2) + 1);
+	str = ft_calloc(sizeof (char), ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!str)
 		return (NULL);
 	i = 0;

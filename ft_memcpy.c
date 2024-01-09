@@ -6,26 +6,22 @@
 /*   By: molasz-a <molasz-a@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:41:20 by molasz-a          #+#    #+#             */
-/*   Updated: 2023/11/19 22:08:50 by molasz-a         ###   ########.fr       */
+/*   Updated: 2024/01/09 13:34:29 by molasz-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *d, const void *s, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t			i;
-	unsigned char	*dest;
-	unsigned char	*src;
+	size_t	i;
 
-	dest = (unsigned char *)d;
-	src = (unsigned char *)s;
 	if (!n || dest == src)
 		return (dest);
 	i = 0;
 	while (i < n)
 	{
-		dest[i] = src[i];
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 		i++;
 	}
 	return (dest);

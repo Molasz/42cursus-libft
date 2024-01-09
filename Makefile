@@ -6,9 +6,9 @@ SRCS	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		  ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 		  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-BSRCS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-		  ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-		  ft_lstmap.c
+BSRCS	= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+		  ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+		  ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
 HEAD	= libft.h
 
@@ -22,8 +22,6 @@ AR		= ar rc
 
 RM		= rm -f
 
-LIB		= ranlib
-
 CC		= cc
 
 CFLAGS	= -Wall -Wextra -Werror
@@ -33,7 +31,6 @@ CFLAGS	= -Wall -Wextra -Werror
 
 ${NAME}:	${OBJS}
 			${AR} ${NAME} ${OBJS}
-			${LIB} ${NAME}
 
 all: 		${NAME}
 
@@ -47,6 +44,5 @@ re:			fclean all
 
 bonus:		${OBJS} ${BOBJS}
 			${AR} ${NAME} ${OBJS} ${BOBJS}
-			${LIB} ${NAME}
 
 .PHONY:		clean fclean re all bonus
