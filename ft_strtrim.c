@@ -6,7 +6,7 @@
 /*   By: molasz-a <molasz-a@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 16:10:09 by molasz-a          #+#    #+#             */
-/*   Updated: 2024/01/09 16:41:43 by molasz-a         ###   ########.fr       */
+/*   Updated: 2024/01/10 00:41:46 by molasz-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ char	*ft_strtrim(char const *s, char const *set)
 	size_t	start;
 	size_t	end;
 	char	*str;
-	int		i;
 
 	start = 0;
 	end = ft_strlen(s);
@@ -42,7 +41,6 @@ char	*ft_strtrim(char const *s, char const *set)
 	str = ft_calloc(sizeof (char), end - start + 1);
 	if (!str)
 		return (NULL);
-	i = 0;
 	ft_strlcpy(str, &s[start], end - start + 1);
 	return (str);
 }
