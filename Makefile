@@ -12,6 +12,8 @@ BSRCS	= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 
 HEAD	= libft.h
 
+MAKE	= Makefile
+
 OBJS	= ${SRCS:.c=.o}
 
 BOBJS	= ${BSRCS:.c=.o}
@@ -26,23 +28,23 @@ CC		= cc
 
 CFLAGS	= -Wall -Wextra -Werror
 
-.c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
-
-${NAME}:	${OBJS}
-			${AR} ${NAME} ${OBJS}
+%.o:%.c
+			${CC} ${CFLAGS} -c $< -o $@
 
 all: 		${NAME}
 
+${NAME}:	${OBJS} ${HEAD} ${MAKE}
+			${AR} ${NAME} ${OBJS}
+
 clean:
-			${RM} ${OBJS}
+			${RM} ${OBJS} ${BOBJS}
 
 fclean:		clean
 			${RM} ${NAME}
 
 re:			fclean all
 
-bonus:		${OBJS} ${BOBJS}
-			${AR} ${NAME} ${OBJS} ${BOBJS}
+bonus:		${NAME} ${BOBJS} ${HEAD} ${MAKE}
+			${AR} ${NAME} ${BOBJS}
 
 .PHONY:		clean fclean re all bonus
