@@ -34,8 +34,6 @@ CFLAGS	= -Wall -Wextra -Werror
 
 all: 		${NAME}
 
--include ${DEPS} ${BDEPS}
-
 %.o:%.c
 			${CC} ${CFLAGS} -c $< -MMD -MP
 
@@ -55,5 +53,7 @@ bonus:		do_bonus
 do_bonus:	${NAME} ${BOBJS} ${HEAD} ${MAKE}
 			${AR} ${NAME} ${BOBJS}
 			touch do_bonus
+
+-include ${DEPS} ${BDEPS}
 
 .PHONY:		clean fclean re all bonus
