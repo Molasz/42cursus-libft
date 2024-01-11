@@ -4,3 +4,5 @@ libft.a
 *.swp
 *.out
 *.o
+*.d
+do_bonus

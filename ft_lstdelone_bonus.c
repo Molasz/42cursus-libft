@@ -6,7 +6,7 @@
 /*   By: molasz-a <molasz-a@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 01:56:27 by molasz-a          #+#    #+#             */
-/*   Updated: 2023/11/21 17:37:53 by molasz-a         ###   ########.fr       */
+/*   Updated: 2024/01/11 16:30:07 by molasz-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	del(lst->content);
-	free(lst);
+	if (lst)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }

@@ -18,9 +18,13 @@ OBJS	= ${SRCS:.c=.o}
 
 BOBJS	= ${BSRCS:.c=.o}
 
+DEPS	= ${SRCS:.c=.d}
+
+BDEPS	= ${BSRCS:.c=.d}
+
 NAME	= libft.a
 
-AR		= ar rc
+AR		= ar rcs
 
 RM		= rm -f
 
@@ -28,23 +32,28 @@ CC		= cc
 
 CFLAGS	= -Wall -Wextra -Werror
 
-%.o:%.c
-			${CC} ${CFLAGS} -c $< -o $@
-
 all: 		${NAME}
+
+-include ${DEPS} ${BDEPS}
+
+%.o:%.c
+			${CC} ${CFLAGS} -c $< -MMD -MP
 
 ${NAME}:	${OBJS} ${HEAD} ${MAKE}
 			${AR} ${NAME} ${OBJS}
 
 clean:
-			${RM} ${OBJS} ${BOBJS}
+			${RM} ${OBJS} ${BOBJS} ${DEPS} ${BDEPS} do_bonus
 
 fclean:		clean
 			${RM} ${NAME}
 
 re:			fclean all
 
-bonus:		${NAME} ${BOBJS} ${HEAD} ${MAKE}
+bonus:		do_bonus
+
+do_bonus:	${NAME} ${BOBJS} ${HEAD} ${MAKE}
 			${AR} ${NAME} ${BOBJS}
+			touch do_bonus
 
 .PHONY:		clean fclean re all bonus
