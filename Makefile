@@ -81,7 +81,7 @@ all: 		${NAME}
 				${CC} ${CFLAGS} -c $< -MMD
 
 ${NAME}:	${OBJS} ${HEAD} Makefile
-				${AR} ${NAME} 
+				${AR} ${NAME} ${OBJS}
 
 clean:
 				${RM} ${OBJS} ${BOBJS} ${DEPS} ${BDEPS} do_bonus
