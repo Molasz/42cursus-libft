@@ -80,7 +80,7 @@ all: 		${NAME}
 %.o:		%.c
 				${CC} ${CFLAGS} -c $< -MMD
 
-${NAME}:	${NAME} ${BONUS} ${HEAD} Makefile
+${NAME}:	${OBJS} ${HEAD} Makefile
 				${AR} ${NAME} 
 
 clean:
@@ -93,7 +93,7 @@ re:			fclean all
 
 bonus:		do_bonus
 
-do_bonus:	${NAME} ${BOBJS} ${HEAD} ${MAKE}
+do_bonus:	${NAME} ${BOBJS} ${HEAD} Makefile
 			${AR} ${NAME} ${BOBJS}
 			touch do_bonus
 
