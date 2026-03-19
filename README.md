@@ -4,10 +4,6 @@ _This project has been created as part of the 42 curriculum by molasz-a._
 
 > Part of [42 Barcelona — molasz-a](https://github.com/Molasz/42), a monorepo centralizing every project completed at 42 Barcelona.
 
-C standard library reimplemented from scratch — the backbone of every project that follows.
-
----
-
 ## Description
 
 C programming quickly becomes tedious without access to standard utility functions. **libft** is a project to reimplement those functions from scratch, understanding how they work at a low level. The result is a static library (`libft.a`) that serves as a personal toolbox throughout the entire 42 curriculum.
