@@ -117,18 +117,4 @@ cc main.c -L. -lft -o my_program
 
 ---
 
-## Resources
-
-- [Linux man pages](https://man7.org/linux/man-pages/) — reference for all reimplemented functions
-- [cppreference.com — C standard library](https://en.cppreference.com/w/c)
-- [The C Programming Language — K&R](https://en.wikipedia.org/wiki/The_C_Programming_Language)
-- [Understanding linked lists — Stanford](https://cs.stanford.edu/people/nick/linked-lists-tutorial/)
-- [Makefile tutorial](https://makefiletutorial.com/)
-
-### AI usage
-
-AI was used exclusively for writing this README file. All source code was written manually as part of the learning process, in accordance with 42's guidelines on AI usage during the foundational phase.
-
----
-
 _molasz-a · 42 Barcelona_
